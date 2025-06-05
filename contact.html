@@ -18,6 +18,47 @@
         <div class="dec_bar"></div> 
         
     </nav>
+
+    <section class="contact_bg_img">
+        <h1 class = "contact_title">Contact Us</h1>
+    </section>
+
+    <div class="contact_container">
+        <div class="form_container">
+            <form action="index.php" method="POST">
+                <div class="row">
+                    <div class ="col">
+                        <p><label for="fname">First Name:</label></p>
+                        <input type="text" class="fname" required>
+                    </div>
+                    <div class ="col">
+                        <p><label for="lname">Last Name:</label></p>
+                        <input type="text" class="lname" required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class ="col">
+                        <p><label for="email">Email Address:</label></p>
+                        <input type="email" class="email" placeholder="example@email.com" required>
+                    </div>
+                    <div class ="col">
+                        <p><label for="phonenum">Phone Number:</label></p>
+                        <input type="tel" class="phonenum" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"required>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <p><label for="messgae">Message:</label></p>
+                    <textarea class="message" rows="10" columns="10" required></textarea>
+                </div>
+
+                <p></p>
+                <input type="submit" class="submit">
+            </form>
+        </div>
+    
+    </div>
     
 </body>
 
