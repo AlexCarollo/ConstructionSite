@@ -20,7 +20,7 @@ function updateText() {
             review_box.textContent="\"My roof got fixed and has no more leaks!\" \r\n\r\n - Customer #1, Denver";
             break;
         case 2:
-            review_box.textContent="\"I needed heavy duty landscaping to save my garden, and Bowser Construction helped me meet my goals at a reasonable time and rate.\" \r\n\r\n - Customer #2, Denver Suburb";
+            review_box.textContent="\"I needed heavy duty landscaping to save my garden, and Bowser Construction saved me!\" \r\n\r\n - Customer #2, Denver Suburb";
             break;
         case 3:
             review_box.textContent="\"Very efficient service!\" \r\n\r\n - Customer #3, Denver Suburb";
