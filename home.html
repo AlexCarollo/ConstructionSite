@@ -6,7 +6,11 @@
   - Add button on home page that takes to services/contact us, not sure yet. Depends on the rest of the page design
   - Create a footer with necessary information about company, most sites show LLC, copyright, etc.
   - Create an actual logo and icon
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M3 4H21V6H3V4ZM9 11H21V13H9V11ZM3 18H21V20H3V18Z"></path></svg>
 -->
+
+
 
 <!DOCTYPE html>
 <html>
@@ -16,25 +20,27 @@
     <title>Home | Bowser Construction</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" type="image/jpg" href="images/logo placeholder.jpg">
-    
+    <!-- Used for the dropdown menu icon-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
 </head>
 <body>
-    
     <nav class = "navbar">
-        <h1 class="logo">BOWSER CONSTRUCTION</h1>
-        <div class="navlinks">
-            <ul>
-                <li><a href="contact_simple.html">Contact Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="home.html">Home</a></li>            
-            </ul>
-        </div>  
-        <div class="dec_bar"></div> 
+        <h1 id="logo">BOWSER CONSTRUCTION</h1>
+        <ul class="sidebar">
+            <li id = "close_menu"><a href = #><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28x" fill="#FFFFFF"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+            <li ><a href="home.html">Home</a></li>  
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact_simple.html">Contact Us</a></li>
+        </ul>
         
-    </nav>
-
-    <nav class = "altnavbar">
-        <h1 class="logo">BOWSER CONSTRUCTION</h1> 
+        <ul class="navlinks">
+            <li id = "open_menu"><a href = #><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            <li class = "hideOnShrink"><a href="contact_simple.html">Contact Us</a></li>
+            <li class = "hideOnShrink"><a href="services.html">Services</a></li>
+            <li class = "hideOnShrink"><a href="home.html">Home</a></li>           
+        </ul>
         <div class="dec_bar"></div> 
     </nav>
     
@@ -63,7 +69,6 @@
             </div>
         </div>
     </div>
-    <script src="scripts/reviews.js"></script>
 
     <div class = "map">
         <div>
@@ -75,6 +80,9 @@
         </div>
     </div>
     
+    <script src="scripts/navbar.js"></script>
+    <script src="scripts/reviews.js"></script>
+
 </body>
 
 </html>

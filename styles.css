@@ -38,7 +38,6 @@ button:hover{
     border-color: #de7214;
     border-style: inset;
 }
-
 @media screen and (max-width: 1000px) {
     h1{
         padding-left: 10px;
@@ -62,21 +61,15 @@ button:hover{
     }
 }
 
-/*
-@media screen and (max-width: 800px){
-    .navbar{
-        display: none;
-    }
-    .altnavbar{
-        display: inline;
-    } 
-}
-*/
-
 .navbar{
+    position: fixed;
+    width:100%;
+    background-color:rgb(32, 32, 32);
     margin:0px;
+    transition: 0.4s ease-in-out;
+    z-index: 100;
 }
-.logo {
+#logo {
     margin-top:18px;
     font-size: 30px;
     margin-left: 5%;
@@ -88,8 +81,11 @@ button:hover{
     list-style-type: none;
     padding: 0px;
     margin: 0px;
+}
+.navbar .navlinks{
     display: flex;
     flex-direction: row-reverse;
+    text-align: center;
 }
 .navbar a{
     color: white;
@@ -98,29 +94,61 @@ button:hover{
     text-decoration: none;
     padding: 20px;
     display: block;
-    text-align: center;
 }
 .navbar a:hover{
    text-decoration: bold;
    background-color: #de7214;
 }
-.navbar li{
-    float: right;
+.navbar svg{
+    display: block;
 }
+.sidebar svg{
+   width: 28px;
+}
+.sidebar{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    max-width: 200px;
+    z-index: 999;
+    flex-direction: column;
+    display: none;
+    align-items: right;
+    justify-content: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+#open_menu{
+    display: none;
+}
+/* Hides navbar links on narrower screens*/
+@media screen and (max-width: 800px){
+    .hideOnShrink{
+        display: none;
+    }
+    #open_menu{
+        display: block;
+    }
+}
+/* Hides navbar logo on even narrower screens than above*/
+@media screen and (max-width: 425px){
+    #logo{
+        display:none;
+    }
+}
+
 .dec_bar{
-    height:10px;
+    height:15px;
     background-color: #de7214;
     background-position: fixed;
     background-size: cover;
-    
 }
-.altnavbar{
-    display:none;
-}
-
 
 
 .bg_img{
+    z-index: 10;
     padding: 0px;
     background-image: url(images/construction_placeholder.jpg);
     background-repeat: no-repeat;
@@ -128,8 +156,8 @@ button:hover{
     background-position: fixed;
     background-size: cover;
     height: 400px;
+    min-width: 100%;
 }
-
 .slogan{
     margin-top: 0;
     margin-left:10px;
@@ -152,6 +180,7 @@ button:hover{
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
+
 }
 .home_container h1{
     text-align: center;
@@ -172,6 +201,7 @@ button:hover{
     width: 25%;
     align-self: center;
     min-width: 400px;
+        z-index: 10;
 }
 @media screen and (max-width: 500px){
     .home_container .reviews{
@@ -211,6 +241,94 @@ button:hover{
     max-width: 60%;
     padding: 50px;
 }
+
+.contact_container{
+    overflow:auto;
+}
+.contact_container .form_container{
+    width: 65%;
+}
+.row{
+    min-width: 375px;
+    overflow: auto;
+}
+.row div{
+    float: left;
+}
+.col{
+    width:40%;
+    min-width: 300px;
+    margin-right: 50px;
+}
+.contact_bg_img{
+    padding: 0px;
+    background-image: url(images/construction_placeholder.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: fixed;
+    background-size: cover;
+    height: 400px;
+    text-align: center;
+    min-width: 100%;
+}
+.contact_title{
+    margin-top: 0;
+    position: relative;
+    top: 150px;
+    text-align: center;
+}
+
+
+.simple_contact{
+    margin-top: 50px;
+    text-align: center;
+}
+.simple_contact h2{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+
+.services_bg_img{
+    padding: 0px;
+    background-image: url(images/construction_placeholder.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-position: fixed;
+    background-size: cover;
+    height: 400px;
+    text-align: center;
+    min-width: 100%;
+}
+.services_title{
+    margin-top: 0;
+    position: relative;
+    top: 120px;
+    text-align: center;
+}
+
+.serv_container{
+    margin-top: 2%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.serv_container div{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.serv_container img{
+   width: 100%;
+   height: auto;
+   min-width: 100px;
+}
+
+
+
+
+
 
 form{
     margin-left: 40px;
@@ -256,85 +374,3 @@ textarea:hover{
     background-color:dark#de7214;
     border-color: dark#de7214;
 }
-
-.contact_container{
-    overflow:auto;
-}
-.contact_container .form_container{
-    width: 65%;
-}
-.row{
-    min-width: 375px;
-    overflow: auto;
-}
-.row div{
-    float: left;
-}
-.col{
-    width:40%;
-    min-width: 300px;
-    margin-right: 50px;
-}
-.contact_bg_img{
-    padding: 0px;
-    background-image: url(images/construction_placeholder.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-position: fixed;
-    background-size: cover;
-    height: 400px;
-    text-align: center;
-}
-.contact_title{
-    margin-top: 0;
-    position: relative;
-    top: 150px;
-    text-align: center;
-}
-
-
-.simple_contact{
-    margin-top: 50px;
-    text-align: center;
-}
-.simple_contact h2{
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-
-.services_bg_img{
-    padding: 0px;
-    background-image: url(images/construction_placeholder.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-position: fixed;
-    background-size: cover;
-    height: 400px;
-    text-align: center;
-}
-.services_title{
-    margin-top: 0;
-    position: relative;
-    top: 120px;
-    text-align: center;
-}
-
-.serv_container{
-    margin-top: 2%;
-    width:100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-.serv_container div{
-    margin-left: 5%;
-    margin-right: 5%;
-}
-.serv_container img{
-   width: 100%;
-   height: auto;
-   min-width: 150px;
-}
-
